@@ -20,19 +20,27 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# https://github.com/joerghall/sourcesfs
+# https://github.com/joerghall/devtools
 #
 cmake_minimum_required(VERSION 3.5)
 
 include(_submodules/cbt/cmake/setup.cmake)
-
-discover_source_version()
 
 set(CMAKE_CXX_STANDARD 14)
 
 if(APPLE)
     set(CMAKE_OSX_DEPLOYMENT_TARGET 10.10)
 endif()
+
+if(BUILD_WINDOWS)
+    add_artifact("python2" "https://h1grid.com:443/artifactory/cbt/devtools/python/2.7.13/python-2.7.13-windows-x64.tgz" ${ARTIFACT_TOOLSETS_CACHE} "python/2.7.13/windows-x64" "python-2.7.13-windows-x64.tgz")
+elseif(BUILD_OSX)
+    add_artifact("python2" "https://h1grid.com:443/artifactory/cbt/devtools/python/2.7.14/python-2.7.14-osx.tgz" ${ARTIFACT_TOOLSETS_CACHE} "python/2.7.14/osx" "python-2.7.14-osx.tgz")
+elseif(BUILD_LINUX)
+    add_artifact("python2" "https://h1grid.com:443/artifactory/cbt/devtools/python/2.7.14/python-2.7.14-linux.tgz" ${ARTIFACT_TOOLSETS_CACHE} "python/2.7.14/linux" "python-2.7.14-linux.tgz")
+endif()
+
+discover_source_version()
 
 project(devtools)
 
