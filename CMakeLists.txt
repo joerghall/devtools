@@ -37,7 +37,7 @@ endif()
 # need a mechanisem to override
 # document
 if(BUILD_WINDOWS)
-    add_artifact("python2" "https://h1grid.com:443/artifactory/cbt/devtools/python/2.7.13/python-2.7.13-windows-x64.tgz" ${ARTIFACT_TOOLSETS_CACHE} "python/2.7.13/windows-x64" "python-2.7.13-windows-x64.tgz")
+    add_artifact("python2" "https://h1grid.com:443/artifactory/cbt/devtools/python/2.7.14/python2-2.7.14-windows-x64.tgz" ${ARTIFACT_TOOLSETS_CACHE} "python2/2.7.14/windows-x64" "python2-2.7.14-windows-x64.tgz")
     add_artifact("ninja" "https://h1grid.com:443/artifactory/cbt/devtools/ninja/1.8.2/ninja-1.8.2-windows.tgz" ${ARTIFACT_TOOLSETS_CACHE} "ninja/1.8.2/windows" "ninja-1.8.2-windows.tgz")
     add_artifact("pigz" "https://h1grid.com:443/artifactory/cbt/devtools/pigz/2.3.1/pigz-2.3.1-windows.tgz" ${ARTIFACT_TOOLSETS_CACHE} "pigz/2.3.1/windows" "pigz-2.3.1-windows.tgz")
 elseif(BUILD_OSX)
